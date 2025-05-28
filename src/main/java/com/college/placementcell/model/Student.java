@@ -15,14 +15,18 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String course;
 
+    private String name;
+    
+    @Column(unique=true)
     private String email;
 
     private String department;
 
     private double cgpa;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 }

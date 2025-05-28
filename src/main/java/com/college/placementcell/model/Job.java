@@ -3,6 +3,7 @@ package com.college.placementcell.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -19,7 +20,7 @@ public class Job {
 
     private String title;
     
-    private long salary;
+    private String salary;
     
     private String location;
 
@@ -29,4 +30,9 @@ public class Job {
 
     @ManyToOne
     private Company company;
+
+	public void setPostedDate(LocalDate now) {
+		// TODO Auto-generated method stub
+		
+	}
 }
